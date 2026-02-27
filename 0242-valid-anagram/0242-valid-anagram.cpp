@@ -1,25 +1,20 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        map <char , int> mps;
-        map <char , int> mpt;
-
-        if(s.size() != t.size()){
-            return false;
-        }
+        if(s.size() != t.size()) return false;
+        int n = s.size();
+        vector <int> freq(26,0);
 
         for(auto val : s){
-            mps[val] ++;
+            freq[val - 'a'] ++;
         }
 
         for(auto val : t){
-            mpt[val] ++;
+            freq[val - 'a'] --;
         }
-        
-        for(auto val : s){
-            if(mps[val] != mpt[val]){
-                return false;
-            }
+
+        for(auto val : freq){
+            if(val !=0) return false;
         }
         return true;
     }
