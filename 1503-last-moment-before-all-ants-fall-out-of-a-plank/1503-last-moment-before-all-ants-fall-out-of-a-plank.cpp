@@ -1,15 +1,7 @@
 class Solution {
 public:
     int getLastMoment(int n, vector<int>& left, vector<int>& right) {
-        vector <int> mix;
-        vector <int> ant;
-
-        for(auto aval : left){
-            mix.emplace_back(aval);
-        }
-        for(auto aval : right){
-            mix.emplace_back(aval);
-        }
+        
 
         int low=INT_MAX , high = INT_MIN;
 
