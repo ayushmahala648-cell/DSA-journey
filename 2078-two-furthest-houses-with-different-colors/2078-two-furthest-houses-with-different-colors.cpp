@@ -3,7 +3,7 @@ public:
     int maxDistance(vector<int>& colors) {
         int n = colors.size();
         int i=0 , j=n-1;
-        int ans1,ans2;
+        int ans1=0,ans2=0;
         while(j>0){
             if(colors[i] != colors[j]){
                 ans1 = j-i;
