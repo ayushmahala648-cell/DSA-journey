@@ -3,7 +3,7 @@ public:
     void moveZeroes(vector<int>& nums) {
         int i=0 , j=0 , n=nums.size();
 
-        while(j<n){
+        while(j<n && i<n){
             if(nums[i] != 0){
                 i++;
             }
