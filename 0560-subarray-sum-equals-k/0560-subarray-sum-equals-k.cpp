@@ -8,7 +8,9 @@ public:
         mp[0]=1;
         for(int i=0 ; i<n ; i++){
             curr +=nums[i];
-            cnt += mp[curr-k];
+            if(mp.count(curr-k)){
+                cnt += mp[curr-k];
+            }
             mp[curr] +=1;
         }
         return cnt;
