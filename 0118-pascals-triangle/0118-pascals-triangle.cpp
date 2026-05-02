@@ -15,20 +15,22 @@ public:
 
         return val/div;
     }
-    void pascalrows (vector <int> &currentrow , int r){
+    // void pascalrows (vector <int> &currentrow , int r){
         
-        for(int i=0 ; i<r ; i++){
-            currentrow.emplace_back(pascal(r,i));
-        }
+    //     for(int i=0 ; i<r ; i++){
+    //         currentrow.emplace_back(pascal(r,i));
+    //     }
         
-    }
+    // }
 
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> ans;
 
         for(int r=1 ; r<=numRows ; r++){
             vector<int> currentrow;
-            pascalrows(currentrow , r);
+            for(int i=0 ; i<r ; i++){
+                currentrow.emplace_back(pascal(r,i));
+            }
             ans.emplace_back(currentrow);
         }
         return ans;
