@@ -20,7 +20,6 @@ public:
     //     for(int i=0 ; i<r ; i++){
     //         currentrow.emplace_back(pascal(r,i));
     //     }
-        
     // }
 
     vector<vector<int>> generate(int numRows) {
@@ -28,8 +27,11 @@ public:
 
         for(int r=1 ; r<=numRows ; r++){
             vector<int> currentrow;
+            long long val=1;
             for(int i=0 ; i<r ; i++){
-                currentrow.emplace_back(pascal(r,i));
+                currentrow.emplace_back(val);
+                val *= (r-i-1);
+                val /= (i+1);
             }
             ans.emplace_back(currentrow);
         }
