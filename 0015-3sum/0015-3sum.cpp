@@ -1,19 +1,4 @@
 class Solution {
-    struct Freq {
-        uint64_t data[(100'001 + 15) / 16] = {};
-
-        inline uint64_t get(uint x, uint sign) const {
-            uint shift = ((x & 15) << 2) | (sign << 1);
-            return (data[x >> 4] >> shift) & 3;
-        }
-
-        inline void add(uint x, uint sign) {
-            uint i = x >> 4;
-            uint shift = ((x & 15) << 2) | (sign << 1);
-            auto v = 3 & ~(data[i] >> shift);
-            data[i] += (uint64_t)(!!v) << shift;
-        }
-    };
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         int n = nums.size();
