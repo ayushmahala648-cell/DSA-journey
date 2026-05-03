@@ -16,7 +16,7 @@ public:
                 int c = b+1;
                 int d = n-1;
                 while(c < d){
-                    signed long long val = nums[a] + nums[b] + nums[c] + nums[d];
+                    long long val = (long long)nums[a] + nums[b] + nums[c] + nums[d];
                     if(val == target){
                         vector<int> temp = {nums[a] , nums[b] , nums[c] , nums[d]};
                         answer.emplace_back(temp);
