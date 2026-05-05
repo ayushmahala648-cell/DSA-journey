@@ -3,7 +3,7 @@ public:
     int maxArea(vector<int>& height) {
         int n = height.size();
         int i=0 , j=n-1;
-        int maxarea =  (n-1)*min(height[i] , height[j]);
+        int maxarea =  0;
         
 
         while(i<j){
