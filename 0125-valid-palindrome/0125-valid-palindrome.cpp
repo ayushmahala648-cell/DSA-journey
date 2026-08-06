@@ -1,37 +1,28 @@
 class Solution {
 public:
-    string lower_case(string &s){
-        string p = "";
-        for(auto val : s){
-            if(isdigit(val) ){
-                p+=val;
+    string convert(string s){
+        string f = "";
+        for(auto word : s){
+            if(isalnum(word) && isupper(word)){
+                f += word+32;
             }
-            if(islower(val) ){
-                p+=val;
-            }
-            if(isupper(val) ){
-                p+=tolower(val);
+            else if(isalnum(word)){
+                f += word;
             }
         }
-        s=p;
-        return s;
+        return f;
     }
-    bool isPalindrome(string &s) {
-        s = lower_case(s);
-        int i=0 , j=s.size()-1;
+    bool isPalindrome(string s) {
+        string l = convert(s);
+        int i=0;
+        int j = l.size()-1;
 
-        while(i<=j){
-            if(s[i] != s[j]){
-                return false;
-            }
+        while(i<j){
+            if(l[i] != l[j]) return false;
             i++;
             j--;
         }
+
         return true;
-        
-        
-        
-        
-        
     }
 };
