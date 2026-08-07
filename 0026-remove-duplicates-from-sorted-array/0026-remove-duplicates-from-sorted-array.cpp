@@ -1,20 +1,12 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        unordered_set<int> st;
-        vector<int> v;
-
+        set <int> st;
         for(auto x : nums){
-            if(!st.count(x)){
-                v.emplace_back(x);
-            }
             st.emplace(x);
-            
         }
-
-        nums.swap(v);
-
-
+        nums.clear();
+        nums.assign(st.begin() , st.end());
         return st.size();
     }
 };
