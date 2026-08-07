@@ -3,8 +3,6 @@ public:
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
 
-        if(n==1) return ;
-
         if(n<k){
             k = k % n ;
         }
