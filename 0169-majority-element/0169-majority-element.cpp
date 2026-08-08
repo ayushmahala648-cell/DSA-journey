@@ -5,13 +5,14 @@ public:
         int cnt=0;
         int n = nums.size();
         for(int i=0 ; i<n ; i++){
+            if(cnt==0){
+                majourity_ele = nums[i];
+            }
+
             if(nums[i] == majourity_ele) cnt++;
             else cnt--;
 
-            if(cnt==0){
-                majourity_ele = nums[i];
-                cnt++;
-            }
+            
         }
 
         return majourity_ele;
